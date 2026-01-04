@@ -1,10 +1,11 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIU IEEE SIGHT Idea Pitching Competition</title>
+    <title>IEEE DIU SIGHT Group Idea Pitching Competition</title>
     <style>
         * {
             margin: 0;
@@ -853,18 +854,82 @@
         }
 
         /* Footer - Enhanced */
-        footer {
-            background: linear-gradient(135deg, #2d5016, #1a3a0f);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-            box-shadow: 0 -5px 20px rgba(45, 80, 22, 0.2);
-        }
+footer {
+    background: linear-gradient(135deg, #2d5016, #1a3a0f);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    box-shadow: 0 -5px 20px rgba(45, 80, 22, 0.2);
+}
 
-        footer p {
-            margin: 0.5rem 0;
-            opacity: 0.9;
-        }
+footer p {
+    margin: 0.5rem 0;
+    opacity: 0.9;
+}
+
+.footer-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-item:hover {
+    transform: translateY(-10px);
+}
+
+.footer-logo-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background: white;
+    padding: 1rem;
+    border-radius: 200px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.footer-logo-item img:hover {
+    box-shadow: 0 10px 30px rgba(139, 195, 74, 0.4);
+    transform: scale(1.05);
+}
+
+.footer-logo-item p {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.footer-divider {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8bc34a, transparent);
+    margin: 2rem auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-logos {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-logo-item img {
+        width: 100px;
+        height: 100px;
+    }
+}
 
         /* Animations */
         @keyframes fadeInUp {
@@ -992,19 +1057,786 @@
                 right: auto !important;
             }
         }
+
+        /* Instructions Section - Enhanced */
+.instructions-container {
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    position: relative;
+}
+
+.instructions-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #8bc34a, #689f38);
+    transform: translateX(-50%);
+    border-radius: 2px;
+    display: none;
+}
+
+.instruction-step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    animation: slideInUp 0.6s ease-out both;
+    position: relative;
+}
+
+.instruction-step:nth-child(1) { animation-delay: 0.1s; }
+.instruction-step:nth-child(2) { animation-delay: 0.2s; }
+.instruction-step:nth-child(3) { animation-delay: 0.3s; }
+.instruction-step:nth-child(4) { animation-delay: 0.4s; }
+
+.step-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8bc34a, #689f38);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+    position: relative;
+    z-index: 2;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.step-content {
+    flex: 1;
+    background: white;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    border-left: 4px solid transparent;
+}
+
+.step-content:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
+    border-left-color: #8bc34a;
+}
+
+.step-content h3 {
+    color: #4a7c2c;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.step-content p {
+    color: #558b2f;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.submission-options {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    flex: 1;
+    min-width: 160px;
+    background: linear-gradient(135deg, #e8f5e9, #c5e1a5);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.option-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.option-icon {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.option-card h4 {
+    color: #2d5016;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.option-card p {
+    color: #558b2f;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.option-divider {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #689f38;
+    padding: 0 0.5rem;
+}
+
+.video-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+}
+
+.tip-item {
+    background: linear-gradient(135deg, #e8f5e9, #dcedc8);
+    padding: 0.6rem;
+    border-radius: 8px;
+    color: #2d5016;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.tip-item:hover {
+    transform: translateX(5px);
+    background: linear-gradient(135deg, #c5e1a5, #aed581);
+}
+
+.upload-checklist {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.checklist-item {
+    background: linear-gradient(135deg, #e8f5e9, #c5e1a5);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    color: #2d5016;
+    font-weight: 500;
+    border-left: 3px solid #689f38;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.checklist-item:hover {
+    transform: translateX(8px);
+    background: linear-gradient(135deg, #c5e1a5, #aed581);
+    border-left-color: #558b2f;
+}
+
+.important-note {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    animation: slideInUp 0.6s ease-out both;
+    animation-delay: 0.5s;
+    position: relative;
+}
+
+.note-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffc107, #ffb300);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.note-content {
+      flex: 1;
+    background: #e4c360;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border-left: 4px solid transparent;
+}
+
+.note-content:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.25);
+    border-left-color:     flex: 1;
+    background: white;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border-left: 4px solid transparent;;
+}
+
+.note-content h4 {
+    color: #856404;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.note-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.note-content li {
+    padding: 0.6rem 1rem;
+    margin: 0.4rem 0;
+    background: linear-gradient(135deg, #fff9e6 0%, #ffecb3 100%);
+    border-left: 3px solid #ffc107;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+    color: #856404;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.note-content li:hover {
+    transform: translateX(8px);
+    background: linear-gradient(135deg, #ffecb3 0%, #ffe082 100%);
+    border-left-color: #f57f17;
+    box-shadow: 0 3px 10px rgba(255, 193, 7, 0.25);
+}
+
+.note-content li::before {
+    content: '⚠';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ffc107, #ffb300);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(255, 193, 7, 0.3);
+    font-size: 0.8rem;
+}
+
+.note-content strong {
+    color: #d39e00;
+}
+
+/* Responsive styles for Instructions */
+@media (max-width: 768px) {
+    .instruction-step,
+    .important-note {
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .step-number,
+    .note-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        margin: 0 auto;
+    }
+
+    .step-content,
+    .note-content {
+        padding: 1rem;
+    }
+
+    .step-content h3,
+    .note-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .submission-options {
+        flex-direction: column;
+    }
+
+    .option-divider {
+        transform: rotate(90deg);
+        padding: 0.3rem 0;
+    }
+
+    .video-tips {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+/* Registration Fee Section */
+.fee-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fee-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: slideInUp 0.6s ease-out both;
+    text-align: center;
+}
+
+.fee-card:nth-child(1) { 
+    animation-delay: 0.1s; 
+}
+
+.fee-card:nth-child(2) { 
+    animation-delay: 0.2s; 
+}
+
+.fee-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #8bc34a, #558b2f);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.fee-card:hover::before {
+    transform: scaleX(1);
+}
+
+.fee-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(76, 175, 80, 0.25);
+}
+
+.ieee-member {
+    border: 3px solid #8bc34a;
+}
+
+.ieee-member::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(139, 195, 74, 0.1) 0%, transparent 70%);
+}
+
+.fee-badge {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    color: white;
+    padding: 0.5rem 3rem;
+    transform: rotate(45deg);
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+.fee-icon {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.fee-card h3 {
+    color: #4a7c2c;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.fee-amount {
+    font-size: 2.8rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #8bc34a, #558b2f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.8rem;
+}
+
+.fee-description {
+    color: #558b2f;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.fee-benefits {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.fee-benefits li {
+    padding: 0.6rem 0;
+    color: #2d5016;
+    font-weight: 500;
+    border-bottom: 1px solid #e8f5e9;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.fee-benefits li:hover {
+    padding-left: 10px;
+    color: #4a7c2c;
+}
+
+.fee-benefits li:last-child {
+    border-bottom: none;
+}
+.fee-note {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c5e1a5 100%);
+    border-radius: 15px;
+    border-left: 5px solid #689f38;
+    animation: slideInUp 0.6s ease-out both;
+    animation-delay: 0.3s;
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.15);
+}
+
+.note-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    color: #2d5016;
+    font-size: 1.1rem;
+}
+
+.note-icon-inline {
+    font-size: 1.3rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.fee-note-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fee-note-list li {
+    padding: 0.6rem 0.8rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    color: #2d5016;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    font-size: 0.95rem;
+}
+
+.fee-note-list li:hover {
+    transform: translateX(8px);
+    background: rgba(255, 255, 255, 0.9);
+    border-left-color: #558b2f;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.2);
+}
+
+.join-ieee-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.join-ieee-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+}
+
+.join-note {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: #558b2f;
+    font-style: italic;
+}
+
+/* Responsive styles for Registration Fee */
+@media (max-width: 768px) {
+    .fee-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .fee-card {
+        padding: 2rem;
+    }
+    
+    .fee-amount {
+        font-size: 2.5rem;
+    }
+    
+    .fee-badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 2.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section - Enhanced */
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 1000px;
+    padding: 0 2rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1.2s;
+    font-weight: 300;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1.4s;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.6s;
+}
+
+/* Slider Styles */
+.slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(45 80 22 / 19%) 0%, rgba(26, 58, 15, 0.8) 100%);
+    z-index: 2;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+}
+
+.slider-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.slider-dot.active {
+    background: white;
+    transform: scale(1.3);
+    border-color: #8bc34a;
+    box-shadow: 0 0 15px rgba(139, 195, 74, 0.8);
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 3;
+    backdrop-filter: blur(10px);
+}
+
+.slider-arrow:hover {
+    background: rgba(139, 195, 74, 0.8);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 5px 20px rgba(139, 195, 74, 0.5);
+}
+
+.slider-arrow.prev {
+    left: 30px;
+}
+
+.slider-arrow.next {
+    right: 30px;
+}
+
+/* Responsive for Slider */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .slider-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+
+    .slider-arrow.prev {
+        left: 15px;
+    }
+
+    .slider-arrow.next {
+        right: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
             <div class="logo">
-                <span>🎯</span> DIU IEEE SIGHT
+                <span></span> IEEE DIU SIGHT Group
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#instructions">Instructions</a></li>
+
                 <li><a href="#eligibility">Eligibility</a></li>
+                <li><a href="#registration-fee">Registration Fee</a></li>
                 <li><a href="#timeline">Timeline</a></li>
                 <li><a href="#criteria">Judging</a></li>
                 <li><a href="#prizes">Prizes</a></li>
@@ -1013,21 +1845,107 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
+    <!-- <section id="home" class="hero">
         <div class="hero-content">
-            <h1>💡 Innovate for Impact</h1>
-            <h2>DIU IEEE SIGHT Idea Pitching Competition</h2>
+            <h1>💡 Innovate for Huminity </h1>
+            <h2>IEEE DIU SIGHT Group Idea Pitching Competition</h2>
             <p>An initiative by DIU IEEE SIGHT Chapter to promote technology-driven solutions for social good</p>
             <div class="cta-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxpyuwG-1xXZvAOjhu5vsXA3RXf1aC4VCeElslFavK6bjuNQ/viewform" target="_blank" class="btn btn-primary">
                     <span>📝</span> Register Now
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxpyuwG-1xXZvAOjhu5vsXA3RXf1aC4VCeElslFavK6bjuNQ/viewform" target="_blank" class="btn btn-secondary">
+                <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxpyuwG-1xXZvAOjhu5vsXA3RXf1aC4VCeElslFavK6bjuNQ/viewform" target="_blank" class="btn btn-secondary">
                     <span>🚀</span> Submit Your Idea
+                </a>
+            </div>
+        </div> 
+    </section> -->
+    
+    <!-- <section id="home" class="hero">
+    <div class="hero-content">
+        <h1>💡 Innovate for Huminity </h1>
+        <p style="color: #e8f5e9;">IEEE DIU SIGHT Group Idea Pitching Competition</p2>
+        <p>An initiative by DIU IEEE SIGHT Chapter to promote technology-driven solutions for social good</p>
+        
+    </div>
+
+    <div class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Team collaboration">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80" alt="Innovation">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Social impact">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80" alt="Presentation">
+            </div>
+        </div>
+        
+        <button class="slider-arrow prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-arrow next" onclick="changeSlide(1)">❯</button>
+        
+        <div class="slider-nav">
+            <span class="slider-dot active" onclick="currentSlide(0)"></span>
+            <span class="slider-dot" onclick="currentSlide(1)"></span>
+            <span class="slider-dot" onclick="currentSlide(2)"></span>
+            <span class="slider-dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+<section id="home" class="hero">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80" alt="Team collaboration">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1600&q=80" alt="Innovation">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80" alt="Social impact">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80" alt="Presentation">
+            </div>
+            
+            <div class="slider-overlay"></div>
+            
+            <button class="slider-arrow prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-arrow next" onclick="changeSlide(1)">❯</button>
+            
+            <div class="slider-nav">
+                <span class="slider-dot active" onclick="currentSlide(0)"></span>
+                <span class="slider-dot" onclick="currentSlide(1)"></span>
+                <span class="slider-dot" onclick="currentSlide(2)"></span>
+                <span class="slider-dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <h1>💡 Innovate for Humanity</h1>
+            <p style="color: white; font-size: 2.2rem; font-weight: 300; margin-bottom: 1rem;">IEEE DIU SIGHT Group Idea Pitching Competition</p>
+            <p style="color: white;">An initiative by DIU IEEE SIGHT Chapter to promote technology-driven solutions for social good</p>
+            <div class="cta-buttons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxpyuwG-1xXZvAOjhu5vsXA3RXf1aC4VCeElslFavK6bjuNQ/viewform" target="_blank" class="btn btn-primary">
+                    <span>📝</span> Register Now
                 </a>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
 
     <section id="about">
         <div class="container">
@@ -1035,18 +1953,32 @@
             <p class="section-subtitle">Empowering students to create meaningful change through innovation</p>
             <div class="about-content">
                 <div class="about-card">
-                    <h3>🤝 What is IEEE SIGHT?</h3>
-                    <p>IEEE Special Interest Group on Humanitarian Technology (SIGHT) is a global network of IEEE volunteers partnering with underserved communities and local organizations to leverage technology for sustainable development and improved quality of life.</p>
+                    <h3 >🤝 What is IEEE SIGHT?</h3>
+                    <p style="text-align: justify;">IEEE Special Interest Group on Humanitarian Technology (SIGHT) is a global network of IEEE volunteers dedicated to applying engineering knowledge and technological innovation to address real-world humanitarian and social challenges. SIGHT works closely with underserved communities, non-profit organizations, and local partners to co-create sustainable, ethical, and impactful solutions.
+
+The initiative focuses on improving quality of life by promoting community-driven development, empowering local stakeholders, and ensuring that technology is accessible, inclusive, and socially responsible. Through interdisciplinary collaboration, IEEE SIGHT encourages students and professionals to transform innovative ideas into practical solutions that create long-term positive change in society.</p>
                 </div>
                 <div class="about-card">
                     <h3>💭 Why This Competition?</h3>
-                    <p>We believe in empowering students to create meaningful change through innovation. This competition provides a platform for aspiring changemakers to develop and pitch technology-driven solutions that address real-world social challenges.</p>
+                    <p style="text-align: justify;">We believe in empowering students to become innovators and changemakers who can create meaningful and lasting impact in society. This competition is designed to provide a supportive platform where aspiring minds can explore, develop, and present technology-driven solutions to real-world social and humanitarian challenges.
+
+By encouraging creativity, critical thinking, and problem-solving, the competition helps participants transform their ideas into actionable concepts. It also fosters collaboration, social responsibility, and innovation, inspiring students to use technology as a tool for positive change and sustainable development.</p>
                 </div>
-                <div class="about-card">
-                    <h3>🎯 Our Mission</h3>
-                    <p>To inspire and support students in developing innovative solutions that leverage technology for social good, sustainable development, and positive community impact.</p>
-                </div>
+                <!-- <div class="about-card">
+                    <h3>Instruction </h3>
+                   <p>To inspire and support students in developing innovative solutions that leverage technology for social good, sustainable development, and positive community impact.</p>
+                
+              
+        
+                
+                </div> -->
             </div>
+
+
+
+
+
+ 
 
             <h3 style="text-align: center; margin-top: 4rem; font-size: 2.5rem; background: linear-gradient(135deg, #4a7c2c, #2d5016); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Focus Areas</h3>
             <p class="section-subtitle">Areas where your innovation can make a difference</p>
@@ -1067,10 +1999,10 @@
                     <div class="focus-icon">📚</div>
                     <h4>Education</h4>
                 </div>
-                <div class="focus-item">
+                <!-- <div class="focus-item">
                     <div class="focus-icon">🌍</div>
                     <h4>Environment</h4>
-                </div>
+                </div> -->
                 <div class="focus-item">
                     <div class="focus-icon">🤖</div>
                     <h4>Smart Technology</h4>
@@ -1078,6 +2010,240 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="instructions" class="section-alt">
+        <div class="container">
+            
+
+
+             
+
+            <h2>Submission Instructions</h2>
+            <p class="section-subtitle">Follow these simple steps to submit your innovative idea</p>
+            
+            <div class="instructions-container">
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>📝 Complete Online Registration</h3>
+                        <p>Fill out the registration form with your team or individual details. You'll receive a confirmation email with further instructions and submission guidelines.</p>
+                    </div>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>📊 Prepare Your Submission</h3>
+                        <p>Create ONE of the following formats to present your idea:</p>
+                        <div class="submission-options">
+                            <div class="option-card">
+                                <div class="option-icon">📽️</div>
+                                <h4>Presentation Slides</h4>
+                                <p>8-12 slides (PDF or PowerPoint)</p>
+                            </div>
+                            <div class="option-divider">OR</div>
+                            <div class="option-card">
+                                <div class="option-icon">🎨</div>
+                                <h4>Infographic Poster</h4>
+                                <p>Single page visual presentation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>🎥 Record Your Pitch Video</h3>
+                        <p>Create a <strong>3-minute video</strong> presenting your slides or poster. No need for high production quality - a simple voice-over explaining your idea will work perfectly!</p>
+                        <div class="video-tips">
+                            <div class="tip-item">✓ Keep it clear and concise</div>
+                            <div class="tip-item">✓ Speak confidently about your solution</div>
+                            <div class="tip-item">✓ Highlight the social impact</div>
+                            <div class="tip-item">✓ Stay within 3 minutes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>☁️ Upload & Submit</h3>
+                        <p>Upload both your slides/poster and the recorded video to a Google Drive folder. Share the folder link with us using the submission form (provided after registration).</p>
+                        <div class="upload-checklist">
+                            <div class="checklist-item">📄 Presentation slides or poster</div>
+                            <div class="checklist-item">🎬 3-minute pitch video</div>
+                            <div class="checklist-item">🔗 Public sharing link enabled</div>
+                            <div class="checklist-item">✅ Submission form completed</div>
+                        </div>
+                    </div>
+                </div>
+        
+
+            <div class="important-note">
+                <div class="note-icon">⚠️</div>
+                 
+                <div class="note-content">
+                    <h4>Important Reminders</h4>
+                    
+                    <ul>
+                        <li>Ensure your Google Drive link has proper sharing permissions (anyone with the link can view)</li>
+                        <li>File names should clearly identify your team and submission</li>
+                        <li>Submit before the deadline: <strong>February 15, 2026</strong></li>
+                        <li>Keep a backup of all your files</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section id="eligibility" class="section-alt eligibility-section">
         <div class="container">
@@ -1089,12 +2255,28 @@
                         <div class="eligibility-emoji">👥</div>
                         <h3>Who Can Participate?</h3>
                     </div>
-                    <ul>
-                        <li>Open to all DIU students (undergraduate and graduate)</li>
+                    <!-- <ul>
+                        <li>Open to all DIU and other university students (undergraduate and graduate)</li>
                         <li>Both individual participants and teams are welcome</li>
                         <li>Team size: Maximum 4 members per team</li>
-                        <li>One person can be part of only one team</li>
-                    </ul>
+
+
+
+
+                        
+                    </ul> -->
+
+
+
+                    <ul>
+    <li>Open to all DIU and all other university students (undergraduate and graduate)</li>
+    <li>Both individual participants and teams are welcome</li>
+    <li>Team size: Maximum 4 members per team</li>
+    <li>Each participant can register for only one team</li>
+    <li>All projects must be original and developed during the event</li>
+      
+</ul>
+
                 </div>
 
                 <div class="eligibility-box">
@@ -1103,17 +2285,148 @@
                         <h3>Important Rules</h3>
                     </div>
                     <ul>
-                        <li>All ideas must be original work of the participants</li>
+                     <li>All ideas must focus on humanitarian impact</li>
+
                         <li>Plagiarism will lead to immediate disqualification</li>
                         <li>Submission format: PDF presentation or PowerPoint (max 10 slides)</li>
                         <li>Ideas must align with at least one of the focus areas</li>
                         <li>Shortlisted teams will be required to pitch their ideas in person</li>
-                        <li>Decision of the judges will be final</li>
+                       
                     </ul>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="registration-fee" class="section-alt">
+        <div class="container">
+            <h2>Registration Fee</h2>
+            <p class="section-subtitle">Simple and affordable registration for all participants</p>
+            <div class="fee-container">
+                <div class="fee-card ieee-member">
+                    <div class="fee-badge">🌟 RECOMMENDED</div>
+                    <div class="fee-icon">🎓</div>
+                    <h3>IEEE Member</h3>
+                    <div class="fee-amount">FREE</div>
+                    <p class="fee-description">For registered IEEE members with valid membership</p>
+                    <ul class="fee-benefits">
+                        <li>✓ No registration fee</li>
+                        <li>✓ Full competition access</li>
+                        <li>✓ All prizes & benefits</li>
+                        <li>✓ IEEE networking opportunities</li>
+                    </ul>
+                    
+                </div>
+                <div class="fee-card non-member">
+                    <div class="fee-icon">👨‍🎓</div>
+                    <h3>Non-IEEE Member</h3>
+                    <div class="fee-amount">৳250</div>
+                    <p class="fee-description">For non-IEEE members and general participants</p>
+                    <ul class="fee-benefits">
+                        <li>✓ One-time registration fee</li>
+                        <li>✓ Full competition access</li>
+                        <li>✓ All prizes & benefits</li>
+                        <li>✓ Participation certificate</li>
+                    </ul>
+                    <p style="position: center;">Or</p>
+                    <a href="https://www.ieee.org/membership/join/index.html" target="_blank" class="join-ieee-btn">
+                        🌟 Join IEEE Today
+                    </a>
+                    <p class="join-note">Not an IEEE member? Join now and participate for FREE!</p>
+                </div>
+            </div>
+           <div class="fee-note">
+                <div class="note-header">
+                    <span class="note-icon-inline">💡</span>
+                    <strong>Important Information</strong>
+                </div>
+                <ul class="fee-note-list">
+                    <li>💳 Payment details will be provided after registration</li>
+                    <li>👥 Team registration fee applies per team, not per member</li>
+                    <li>📧 Confirmation email will include payment instructions</li>
+                    <li>✅ Payment must be completed before the submission deadline</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="eligibility" class="section-alt eligibility-section">
+        <div class="container">
+            <h2>Eligibility & Rules</h2>
+            <p class="section-subtitle">Who can participate and what are the guidelines</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section id="timeline" class="timeline-section">
         <div class="container">
@@ -1123,9 +2436,11 @@
                 <div class="timeline-item">
                     <div class="timeline-dot">🚀</div>
                     <div class="timeline-content">
-                        <h3>📅 Registration Opens</h3>
-                        <div class="timeline-date">January 10, 2026</div>
+                        <h3>📅 Registration </h3>
+                        <div class="timeline-date">Open: January 10, 2026</div>
+                        
                         <p>Start your journey by registering your team or individual participation. The doors are now open for all aspiring innovators!</p>
+                   <div class="timeline-date">Close: January 20, 2026</div>
                     </div>
                 </div>
 
@@ -1133,7 +2448,7 @@
                     <div class="timeline-dot">📝</div>
                     <div class="timeline-content">
                         <h3>📝 Idea Submission Deadline</h3>
-                        <div class="timeline-date">February 15, 2026</div>
+                        <div class="timeline-date">January 25, 2026</div>
                         <p>Submit your complete idea proposal with all required details. Make sure to showcase your creativity and innovation!</p>
                     </div>
                 </div>
@@ -1142,7 +2457,7 @@
                     <div class="timeline-dot">🎯</div>
                     <div class="timeline-content">
                         <h3>🎯 Shortlisting Announcement</h3>
-                        <div class="timeline-date">February 25, 2026</div>
+                        <div class="timeline-date">January 27, 2026</div>
                         <p>Selected teams will be notified via email and website. Check your inbox for the exciting news!</p>
                     </div>
                 </div>
@@ -1151,7 +2466,7 @@
                     <div class="timeline-dot">🎤</div>
                     <div class="timeline-content">
                         <h3>🎤 Pitching Day</h3>
-                        <div class="timeline-date">March 10, 2026</div>
+                        <div class="timeline-date">January 30, 2026</div>
                         <p>Present your ideas to judges and audience. This is your moment to shine and make an impact!</p>
                     </div>
                 </div>
@@ -1160,7 +2475,7 @@
                     <div class="timeline-dot">🏆</div>
                     <div class="timeline-content">
                         <h3>🏆 Result Announcement</h3>
-                        <div class="timeline-date">March 15, 2026</div>
+                        <div class="timeline-date">January 30, 2026</div>
                         <p>Winners will be announced and awarded. Celebrate your achievements with us!</p>
                     </div>
                 </div>
@@ -1180,14 +2495,10 @@
                 </div>
                 <div class="criteria-item">
                     <div class="criteria-icon">🌍</div>
-                    <h3>Social Impact</h3>
-                    <p>Potential to create positive change</p>
+                    <h3>Social Impact & Feasibility</h3>
+                    <p>Potential to create positive change </p>
                 </div>
-                <div class="criteria-item">
-                    <div class="criteria-icon">⚙️</div>
-                    <h3>Feasibility</h3>
-                    <p>Practicality and implementation potential</p>
-                </div>
+                
                 <div class="criteria-item">
                     <div class="criteria-icon">🔬</div>
                     <h3>Technical Approach</h3>
@@ -1247,20 +2558,41 @@
             <p class="section-subtitle">Get in touch with us or find answers to common questions</p>
             <div class="contact-info">
                 <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p>sight@diu.edu.bd</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📱</div>
-                    <h3>Phone</h3>
-                    <p>+880 1XXX-XXXXXX</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">💬</div>
-                    <h3>Facebook</h3>
-                    <p>DIU IEEE SIGHT Chapter</p>
-                </div>
+    <div class="contact-icon">📧</div>
+    <h3>Email</h3>
+    <p>
+        <a href="mailto:ieee133351@gmail.com" style="text-decoration: none; color: inherit;">
+            ieee133351@gmail.com
+        </a>
+    </p>
+</div>
+
+               <div class="contact-card">
+    <div class="contact-icon">📱</div>
+    <h3>Phone</h3>
+    <p>
+        <a href="tel:+8801701801788" style="text-decoration: none; color: inherit;">
+            +880 170-1801788
+        </a>
+    </p>
+</div>
+
+
+
+
+
+              <div class="contact-card">
+    <div class="contact-icon">💬</div>
+    <h3>Facebook</h3>
+    <p>
+        <a href="https://www.facebook.com/profile.php?id=61582082533297" 
+           target="_blank" 
+           style="text-decoration: none; color: inherit;">
+            IEEE DIU SIGHT Group
+        </a>
+    </p>
+</div>
+
             </div>
 
             <h3 style="text-align: center; margin-top: 4rem; font-size: 2rem; color: #4a7c2c;">❓ Frequently Asked Questions</h3>
@@ -1317,17 +2649,110 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="container">
-            <p style="font-size: 1.2rem; font-weight: bold;">&copy; 2026 DIU IEEE SIGHT Chapter. All rights reserved.</p>
-            <p>Daffodil International University</p>
-            <p style="margin-top: 1rem; opacity: 0.8;">Building a better tomorrow through technology and innovation 🚀</p>
+<footer>
+    <div class="container">
+        <div class="footer-logos">
+            <div class="footer-logo-item">
+                <img src="https://daffodilvarsity.edu.bd/template/images/diulogoside.png" alt="Daffodil International University">
+                <p>Daffodil International University</p>
+            </div>
+            <div class="footer-logo-item">
+                <img src="https://i.postimg.cc/Jtgtf8Kr/image.png" alt="IEEE DIU Student Branch"> 
+                <p>IEEE DIU Student Branch</p>
+            </div>
+            <div class="footer-logo-item">
+                <img src="https://i.postimg.cc/cK4sKkTQ/image.png" alt="IEEE DIU SIGHT Group"> 
+                <p>IEEE DIU SIGHT Group</p>
+            </div>
         </div>
-    </footer>
+        <div class="footer-divider"></div>
+        <p style="font-size: 1.2rem; font-weight: bold; margin-top: 2rem;">&copy; 2026 DIU IEEE SB SIGHT Group. All rights reserved.</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Building a better tomorrow through technology and innovation 🚀</p>
+        
+        
+           <div style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+    <span style="opacity: 0.9; font-size: 1rem;">
+        Developed by <strong style="color: #8bc34a;">Md. Mehedi Hasan</strong>
+    </span>
+
+    <a href="https://www.facebook.com/MehediHasanbd2020" target="_blank"
+       style="color: white; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; 
+              background: rgba(139, 195, 74, 0.2); padding: 0.35rem 0.8rem; border-radius: 20px;">
+        Fb
+    </a>
+
+    <a href="https://sites.google.com/view/mehedihasan497/home" target="_blank"
+       style="color: white; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; 
+              background: rgba(139, 195, 74, 0.2); padding: 0.35rem 0.8rem; border-radius: 20px;">
+        Portfollio 
+    </a>
+</div>
+
+        </div>
+    </div>
+</footer>
 
     <script>
-        function toggleMenu() {
+      
+      let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.slider-dot');
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    if (index >= slides.length) currentSlideIndex = 0;
+    if (index < 0) currentSlideIndex = slides.length - 1;
+    
+    slides[currentSlideIndex].classList.add('active');
+    dots[currentSlideIndex].classList.add('active');
+}
+
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index;
+    showSlide(currentSlideIndex);
+}
+
+// Auto-advance slides every 5 seconds
+setInterval(() => {
+    currentSlideIndex++;
+    showSlide(currentSlideIndex);
+}, 5000);
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      function toggleMenu() {
             const menu = document.getElementById('navMenu');
             menu.classList.toggle('active');
         }
@@ -1375,5 +2800,43 @@
             observer.observe(section);
         });
     </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
