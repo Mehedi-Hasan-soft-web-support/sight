@@ -865,23 +865,24 @@ footer p {
     margin: 0.5rem 0;
     opacity: 0.9;
 }
-
 .footer-logos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;   /* ✔️ center */
     align-items: center;
-    justify-items: center;
+    gap: 2rem;                 /* ✔️ controlled spacing */
+    flex-wrap: wrap;           /* ✔️ mobile responsive */
 }
 
 .footer-logo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    transition: transform 0.3s ease;
+    text-align: center;
 }
+
+.footer-logo-item img {
+    height: 60px;              /* ✔️ same size logos */
+    max-width: 100%;
+    object-fit: contain;
+}
+
 
 .footer-logo-item:hover {
     transform: translateY(-10px);
@@ -2639,9 +2640,15 @@ By encouraging creativity, critical thinking, and problem-solving, the competiti
             </div>
         </div>
     </section>
+
+    
 <footer>
     <div class="container">
         <div class="footer-logos">
+           <div class="footer-logo-item">
+                <img src="https://i.postimg.cc/cK4sKkTQ/image.png" alt="IEEE DIU SIGHT Group"> 
+                <p>IEEE DIU SIGHT Group</p>
+            </div>
             <div class="footer-logo-item">
                 <img src="https://daffodilvarsity.edu.bd/template/images/diulogoside.png" alt="Daffodil International University">
                 <p>Daffodil International University</p>
@@ -2650,10 +2657,7 @@ By encouraging creativity, critical thinking, and problem-solving, the competiti
                 <img src="https://i.postimg.cc/Jtgtf8Kr/image.png" alt="IEEE DIU Student Branch"> 
                 <p>IEEE DIU Student Branch</p>
             </div>
-            <div class="footer-logo-item">
-                <img src="https://i.postimg.cc/cK4sKkTQ/image.png" alt="IEEE DIU SIGHT Group"> 
-                <p>IEEE DIU SIGHT Group</p>
-            </div>
+            
         </div>
         <div class="footer-divider"></div>
         <p style="font-size: 1.2rem; font-weight: bold; margin-top: 2rem;">&copy; 2026 DIU IEEE SB SIGHT Group. All rights reserved.</p>
@@ -2681,6 +2685,36 @@ By encouraging creativity, critical thinking, and problem-solving, the competiti
         </div>
     </div>
 </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script>
       
