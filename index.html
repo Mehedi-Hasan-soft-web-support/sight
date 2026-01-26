@@ -6,6 +6,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2255,6 +2256,52 @@ footer a {
 }
 
 
+
+
+/* ============================================ */
+/* FIXED RESPONSIVE NAVIGATION */
+/* ============================================ */
+@media (max-width: 768px) {
+    nav ul {
+        display: none !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: linear-gradient(135deg, #2d5016 0%, #1a3a0f 100%) !important;
+        padding: 1rem !important;
+        gap: 0.5rem !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+        z-index: 999 !important;
+    }
+
+    nav ul.active {
+        display: flex !important;
+    }
+
+    .mobile-menu-btn {
+        display: block !important;
+    }
+}
+
+@media (min-width: 769px) {
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        position: static !important;
+        background: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        gap: 0.6rem !important;
+    }
+    
+    .mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -2356,13 +2403,13 @@ footer a {
 </section> -->
 <section id="home" class="hero">
     <div class="hero-background">
-        <img src="https://lh3.googleusercontent.com/d/13GegJ4rf8hjLU_6Cw1VC0WxwVZPozajx" alt="IEEE DIU SIGHT Contest">
+        <img src="https://lh3.googleusercontent.com/d/13GegJ4rf8hjLU_6Cw1VC0WxwVZPozajx" alt="IEEE DIU SIGHT Competition">
         <div class="slider-overlay"></div>
     </div>
     
     <div class="hero-content">
         <h1>💡 Innovate for Humanity</h1>
-        <p style="color: white; font-size: 2.2rem; font-weight: 300; margin-bottom: 1rem;">IEEE DIU SB SIGHT Group Presents Idea Contest</p>
+        <p style="color: white; font-size: 2.2rem; font-weight: 300; margin-bottom: 1rem;">IEEE DIU SB SIGHT Group Presents Idea Competition</p>
         <p style="color: white;">An initiative by IEEE DIU SB SIGHT Group to promote technology-driven solutions for social good</p>
         <div class="cta-buttons">
             <!-- Registration Form Button -->
@@ -2391,7 +2438,7 @@ footer a {
 
     <section id="about">
         <div class="container">
-            <h2>About the Contest</h2>
+            <h2>About the Competition</h2>
             <p class="section-subtitle">Empowering students to create meaningful change through innovation</p>
             <div class="about-content">
                 <div class="about-card">
@@ -2401,10 +2448,10 @@ footer a {
 The initiative focuses on improving quality of life by promoting community-driven development, empowering local stakeholders, and ensuring that technology is accessible, inclusive, and socially responsible. Through interdisciplinary collaboration, IEEE SIGHT encourages students and professionals to transform innovative ideas into practical solutions that create long-term positive change in society.</p>
                 </div>
                 <div class="about-card">
-                    <h3>💭 Why This Contest?</h3>
-                    <p style="text-align: justify;">We believe in empowering students to become innovators and changemakers who can create meaningful and lasting impact in society. This Contest is designed to provide a supportive platform where aspiring minds can explore, develop, and present technology-driven solutions to real-world social and humanitarian challenges.
+                    <h3>💭 Why This Competition?</h3>
+                    <p style="text-align: justify;">We believe in empowering students to become innovators and changemakers who can create meaningful and lasting impact in society. This Competition is designed to provide a supportive platform where aspiring minds can explore, develop, and present technology-driven solutions to real-world social and humanitarian challenges.
 
-By encouraging creativity, critical thinking, and problem-solving, the Contest helps participants transform their ideas into actionable concepts. It also fosters collaboration, social responsibility, and innovation, inspiring students to use technology as a tool for positive change and sustainable development.</p>
+By encouraging creativity, critical thinking, and problem-solving, the Competition helps participants transform their ideas into actionable concepts. It also fosters collaboration, social responsibility, and innovation, inspiring students to use technology as a tool for positive change and sustainable development.</p>
                 </div>
                 <!-- <div class="about-card">
                     <h3>Instruction </h3>
@@ -2744,7 +2791,7 @@ By encouraging creativity, critical thinking, and problem-solving, the Contest h
                     <p class="fee-description">For registered IEEE members with valid membership</p>
                     <ul class="fee-benefits">
                         <li>✓ No registration fee</li>
-                        <li>✓ Full Contest access</li>
+                        <li>✓ Full Competition access</li>
                         <li>✓ All prizes & benefits</li>
                         <li>✓ IEEE networking opportunities</li>
                     </ul>
@@ -2757,7 +2804,7 @@ By encouraging creativity, critical thinking, and problem-solving, the Contest h
                     <p class="fee-description">For non-IEEE members and general participants</p>
                     <ul class="fee-benefits">
                         <li>✓ One-time registration fee</li>
-                        <li>✓ Full Contest access</li>
+                        <li>✓ Full Competition access</li>
                         <li>✓ All prizes & benefits</li>
                         <li>✓ Participation certificate</li>
                     </ul>
